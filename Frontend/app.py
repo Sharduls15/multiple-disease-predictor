@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import plotly.express as px
 from plotly.subplots import make_subplots
@@ -16,25 +17,28 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import joblib
 
+
+# Set the working directory to the 'Frontend' folder
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # loading the models
-diabetes_model = joblib.load("Frontend/models/diabetes_model.sav")
-heart_model = joblib.load("Frontend/models/heart_disease_model.sav")
-parkinson_model = joblib.load("Frontend/models/parkinsons_model.sav")
+diabetes_model = joblib.load("models/diabetes_model.sav")
+heart_model = joblib.load("models/heart_disease_model.sav")
+parkinson_model = joblib.load("models/parkinsons_model.sav")
 # Load the lung cancer prediction model
-lung_cancer_model = joblib.load('Frontend/models/lung_cancer_model.sav')
+lung_cancer_model = joblib.load('models/lung_cancer_model.sav')
 
 # Load the pre-trained model
-breast_cancer_model = joblib.load('Frontend/models/breast_cancer.sav')
+breast_cancer_model = joblib.load('models/breast_cancer.sav')
 
 # Load the pre-trained model
-chronic_disease_model = joblib.load('Frontend/models/chronic_model.sav')
+chronic_disease_model = joblib.load('models/chronic_model.sav')
 
 # Load the hepatitis prediction model
-hepatitis_model = joblib.load('Frontend/models/hepititisc_model.sav')
+hepatitis_model = joblib.load('models/hepititisc_model.sav')
 
 
-liver_model = joblib.load('Frontend/models/liver_model.sav')# Load the lung cancer prediction model
-lung_cancer_model = joblib.load('Frontend/models/lung_cancer_model.sav')
+liver_model = joblib.load('models/liver_model.sav')# Load the lung cancer prediction model
+lung_cancer_model = joblib.load('models/lung_cancer_model.sav')
 
 
 # sidebar
