@@ -43,16 +43,16 @@ lung_cancer_model = joblib.load('models/lung_cancer_model.sav')
 
 # sidebar
 with st.sidebar:
-    selected = option_menu('Multiple Disease Prediction', [
-        'Disease Prediction',
-        'Diabetes Prediction',
-        'Heart disease Prediction',
-        'Parkison Prediction',
-        'Liver prediction',
-        'Hepatitis prediction',
-        'Lung Cancer Prediction',
-        'Chronic Kidney prediction',
-        'Breast Cancer Prediction',
+    selected = option_menu('Multiple Disease Predictor:', [
+        'Predict Disease from Symptoms',
+        'Diabetes',
+        'Heart Disease',
+        'Parkisons Disease',
+        'Liver Disease',
+        'Hepatitis',
+        'Lung Cancer',
+        'Kidney Disease',
+        'Breast Cancer',
 
     ],
         icons=['','activity', 'heart', 'person','person','person','person','bar-chart-fill'],
