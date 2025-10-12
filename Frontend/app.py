@@ -593,7 +593,7 @@ if selected == 'Hepatitis prediction':
             image = Image.open('positive.jpg')
             st.image(image, caption='')
         else:
-            hepatitis_result = 'You likely don't have Hepatitis!'
+            hepatitis_result = "You likely don't have Hepatitis!"
             image = Image.open('negative.jpg')
             st.image(image, caption='')
 
