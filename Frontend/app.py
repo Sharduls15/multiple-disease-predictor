@@ -24,7 +24,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 diabetes_model = joblib.load("models/diabetes_model.sav")
 heart_model = joblib.load("models/heart_disease_model.sav")
 parkinson_model = joblib.load("models/parkinsons_model.sav")
-# Load the lung cancer prediction model
+# Load the Lung Cancer model
 lung_cancer_model = joblib.load('models/lung_cancer_model.sav')
 
 # Load the pre-trained model
@@ -33,26 +33,26 @@ breast_cancer_model = joblib.load('models/breast_cancer.sav')
 # Load the pre-trained model
 chronic_disease_model = joblib.load('models/chronic_model.sav')
 
-# Load the hepatitis prediction model
+# Load the Hepatitis model
 hepatitis_model = joblib.load('models/hepititisc_model.sav')
 
 
-liver_model = joblib.load('models/liver_model.sav')# Load the lung cancer prediction model
+liver_model = joblib.load('models/liver_model.sav')# Load the Lung Cancer model
 lung_cancer_model = joblib.load('models/lung_cancer_model.sav')
 
 
 # sidebar
 with st.sidebar:
-    selected = option_menu('Multiple Disease Prediction', [
-        'Disease Prediction',
-        'Diabetes Prediction',
-        'Heart disease Prediction',
-        'Parkison Prediction',
-        'Liver prediction',
-        'Hepatitis prediction',
-        'Lung Cancer Prediction',
-        'Chronic Kidney prediction',
-        'Breast Cancer Prediction',
+    selected = option_menu('HEALTHSCOPE', [
+        'Predict Disease from Symptoms',
+        'Diabetes',
+        'Heart Disease',
+        'Parkinsons Disease',
+        'Liver Disease',
+        'Hepatitis',
+        'Lung Cancer',
+        'Kidney Disease',
+        'Brease Cancer',
 
     ],
         icons=['','activity', 'heart', 'person','person','person','person','bar-chart-fill'],
@@ -62,7 +62,7 @@ with st.sidebar:
 
 
 # multiple disease prediction
-if selected == 'Disease Prediction': 
+if selected == 'Predict Disease from Symptoms': 
     # Create disease class and load ML model
     disease_model = DiseaseModel()
     disease_model.load_xgboost('model/xgboost_model.json')
@@ -95,9 +95,9 @@ if selected == 'Disease Prediction':
 
 
 
-# Diabetes prediction page
-if selected == 'Diabetes Prediction':  # pagetitle
-    st.title("Diabetes prediction")
+# Diabetes page
+if selected == 'Diabetes':  # pagetitle
+    st.title("Diabetes")
     image = Image.open('d3.jpg')
     st.image(image, caption='diabetes')
     # columns
@@ -152,8 +152,8 @@ if selected == 'Diabetes Prediction':  # pagetitle
 
 
 # Heart prediction page
-if selected == 'Heart disease Prediction':
-    st.title("Heart Disease Prediction")
+if selected == 'Heart Disease':
+    st.title("Heart Disease")
     image = Image.open('heart2.jpg')
     st.image(image, caption='Heart Diseases')
     # age	sex	cp	trestbps	chol	fbs	restecg	thalach	exang	oldpeak	slope	ca	thal	target
@@ -279,7 +279,7 @@ if selected == 'Heart disease Prediction':
 
 
 if selected == 'Parkisons Prediction':
-    st.title("Parkison prediction")
+    st.title("Parkinsons Disease")
     image = Image.open('p1.jpg')
     st.image(image, caption='Parkinsons Disease')
   # parameters
@@ -362,9 +362,9 @@ lung_cancer_data = pd.read_csv('data/lung_cancer.csv')
 # Convert 'M' to 0 and 'F' to 1 in the 'GENDER' column
 lung_cancer_data['GENDER'] = lung_cancer_data['GENDER'].map({'M': 'Male', 'F': 'Female'})
 
-# Lung Cancer prediction page
-if selected == 'Lung Cancer Prediction':
-    st.title("Lung Cancer Prediction")
+# Lung Cancer page
+if selected == 'Lung Cancer':
+    st.title("Lung Cancer")
     image = Image.open('h.png')
     st.image(image, caption='Lung Cancer')
 
@@ -460,8 +460,8 @@ if selected == 'Lung Cancer Prediction':
 
 
 
-# Liver prediction page
-if selected == 'Liver prediction':  # pagetitle
+# Liver Disease page
+if selected == 'Liver Disease':  # pagetitle
     st.title("Liver Disease Prediction")
     image = Image.open('liver.jpg')
     st.image(image, caption='Liver Diseases')
@@ -523,9 +523,9 @@ if selected == 'Liver prediction':  # pagetitle
 
 
 
-# Hepatitis prediction page
-if selected == 'Hepatitis prediction':
-    st.title("Hepatitis Prediction")
+# Hepatitis page
+if selected == 'Hepatitis':
+    st.title("Hepatitis")
     image = Image.open('h.png')
     st.image(image, caption='Hepatitis')
 
@@ -679,7 +679,7 @@ import joblib
 
 
 # Chronic Kidney Disease Prediction Page
-if selected == 'Chronic Kidney prediction':
+if selected == 'Kidney Disease':
     st.title("Chronic Kidney Disease Prediction")
     # Add the image for Chronic Kidney Disease prediction if needed
     name = st.text_input("Name:")
@@ -801,9 +801,9 @@ if selected == 'Chronic Kidney prediction':
 
 
 
-# Breast Cancer Prediction Page
-if selected == 'Breast Cancer Prediction':
-    st.title("Breast Cancer Prediction")
+# Brease Cancer Page
+if selected == 'Brease Cancer':
+    st.title("Brease Cancer")
     name = st.text_input("Name:")
     # Columns
     # No inputs from the user
