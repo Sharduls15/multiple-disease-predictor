@@ -52,7 +52,7 @@ with st.sidebar:
         'Hepatitis',
         'Lung Cancer',
         'Kidney Disease',
-        'Brease Cancer',
+        'Breast Cancer',
 
     ],
         icons=['','activity', 'heart', 'person','person','person','person','bar-chart-fill'],
@@ -801,9 +801,9 @@ if selected == 'Kidney Disease':
 
 
 
-# Brease Cancer Page
-if selected == 'Brease Cancer':
-    st.title("Brease Cancer")
+# Breast Cancer Page
+if selected == 'Breast Cancer':
+    st.title("Breast Cancer")
     name = st.text_input("Name:")
     # Columns
     # No inputs from the user
